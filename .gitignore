@@ -1,0 +1,7 @@
+## Executaveis ##
+a.out
+main
+
+## Builds ##
+*.o
+build
