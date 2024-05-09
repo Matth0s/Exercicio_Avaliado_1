@@ -1,6 +1,8 @@
 #______________________________________//_______________________________________
-SRC_DIR		=	./source ./test
-SRC			=	Time.cpp
+SRC_DIR		=	./source \
+				./test
+SRC			=	Time.cpp \
+				Liga.cpp
 SRC_MAIN	=	main.cpp
 SRC_TESTE	=	teste_main.cpp
 
@@ -10,7 +12,8 @@ OBJ_MAIN	=	$(SRC_MAIN:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_TESTE	=	$(SRC_TESTE:%.cpp=$(OBJ_DIR)/%.o)
 
 INCD_DIR	=	-I ./include
-INCD		=	Time.h
+INCD		=	Time.h \
+				Liga.h
 #______________________________________//_______________________________________
 vpath %.cpp $(SRC_DIR)
 vpath %.h $(INCD_DIR)
