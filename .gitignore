@@ -1,6 +1,7 @@
 ## Executaveis ##
 a.out
 main
+teste
 
 ## Builds ##
 *.o
