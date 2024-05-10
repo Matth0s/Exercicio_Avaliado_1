@@ -8,17 +8,9 @@
 /*____________________________________________________________________________*/
 /******************************************************************************/
 
-#include "Time.h"
-#include <iostream>
-#include <stdlib.h>
+#include "include.h"
 
 using namespace std;
-
-void	arrayAleatorio(int array[]) {
-	for (unsigned i = 0; i < 24; i++) {
-		array[i] = rand() % 40 + 30;
-	}
-}
 
 int	main(void) {
 
@@ -36,7 +28,7 @@ int	main(void) {
 
 		int array[24] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16,
 							17, 18, 19, 20, 21, 22, 23, 24};
-		Time	time1(array, array);
+		Time	time1("Flamengo", array, array);
 		time1.mostrarGols();
 
 		cout << endl;
@@ -48,29 +40,75 @@ int	main(void) {
 		int		efetuados[24];
 		int		sofridos[24];
 
-		arrayAleatorio(efetuados);
-		arrayAleatorio(sofridos);
+		arrayGolsAleatorios(efetuados);
+		arrayGolsAleatorios(sofridos);
 
-		Time	time1(efetuados, sofridos);
+		Time	time1("Flamengo", efetuados, sofridos);
 
-		for (unsigned i = 0; i < 24; i++) {
-			cout << (time1.getGolsEfetuadosCampeonatoAno(i % 8, CARIOCA)
+		for (unsigned i = 0; i < 20; i++) {
+
+			cout << (time1.getGolsEfetuadosCampeonatoAno(Time::ANOATUAL - (i % 8), CARIOCA)
 					== efetuados[(i % 8) * 3 + CARIOCA] ? "✅" : "❌");
-			cout << (time1.getGolsEfetuadosCampeonatoAno(i % 8, COPADOBRASIL)
+			cout << (time1.getGolsEfetuadosCampeonatoAno(Time::ANOATUAL - (i % 8), COPADOBRASIL)
 					== efetuados[(i % 8) * 3 + COPADOBRASIL] ? "✅" : "❌");
-			cout << (time1.getGolsEfetuadosCampeonatoAno(i % 8, BRASILEIRAO)
+			cout << (time1.getGolsEfetuadosCampeonatoAno(Time::ANOATUAL - (i % 8), BRASILEIRAO)
 					== efetuados[(i % 8) * 3 + BRASILEIRAO] ? "✅" : "❌");
 
-			cout << (time1.getGolsSofridosCampeonatoAno(i % 8, CARIOCA)
+			cout << (time1.getGolsSofridosCampeonatoAno(Time::ANOATUAL - (i % 8), CARIOCA)
 					== sofridos[(i % 8) * 3 + CARIOCA] ? "✅" : "❌");
-			cout << (time1.getGolsSofridosCampeonatoAno(i % 8, COPADOBRASIL)
+			cout << (time1.getGolsSofridosCampeonatoAno(Time::ANOATUAL - (i % 8), COPADOBRASIL)
 					== sofridos[(i % 8) * 3 + COPADOBRASIL] ? "✅" : "❌");
-			cout << (time1.getGolsSofridosCampeonatoAno(i % 8, BRASILEIRAO)
+			cout << (time1.getGolsSofridosCampeonatoAno(Time::ANOATUAL - (i % 8), BRASILEIRAO)
 					== sofridos[(i % 8) * 3 + BRASILEIRAO] ? "✅" : "❌");
 		}
 		cout << endl;
 	}
 
-	return (0);
+	{
+		srand(3);
 
+		Time	time1 = gerarTime("Flamengo");
+		Liga	liga1;
+
+		cout << "___________________________________________________________________" << endl;
+		time1.mostrarGols();
+		cout << "___________________________________________________________________" << endl;
+		liga1.mostrarTimes();
+		cout << "___________________________________________________________________" << endl;
+		liga1.adicionarTime(time1);
+		liga1.mostrarTimes();
+		cout << "___________________________________________________________________" << endl;
+		liga1.removerTimePorNome("Flamengo");
+		liga1.mostrarTimes();
+		cout << "___________________________________________________________________" << endl;
+	}
+
+	{
+		Liga	liga;
+
+		cout << endl << endl;
+		liga.adicionarTime(gerarTime("Flamengo"));
+		liga.adicionarTime(gerarTime("Fluminense"));
+		liga.adicionarTime(gerarTime("Botafogo"));
+		liga.adicionarTime(gerarTime("Vasco"));
+		liga.adicionarTime(gerarTime("Madureira"));
+		liga.mostrarTimes();
+		cout << endl << endl;
+	}
+
+	{
+		Liga	liga;
+
+		liga = gerarLiga();
+
+		cout << endl << endl;
+		liga.mostrarTimes();
+		cout << endl << endl;
+	}
+
+	{
+
+	}
+
+	return (0);
 }
