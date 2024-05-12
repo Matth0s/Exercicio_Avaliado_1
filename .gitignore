@@ -1,8 +1,13 @@
+## Objetos ##
+build
+*.o
+*.obj
+
 ## Executaveis ##
-a.out
+*.out
+*exe
 main
 teste
 
-## Builds ##
-*.o
-build
+## Configurações ##
+.vscode

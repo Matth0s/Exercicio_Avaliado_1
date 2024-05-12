@@ -1,16 +1,16 @@
-#include "include.h"
+#include "Utils.h"
 
-void arrayGolsAleatorios(int array[]) {
+void Utils::arrayGolsAleatorios(int array[limite]) {
 
-	for (unsigned i = 0; i < 24; i++) {
+	for (unsigned i = 0; i < limite; i++) {
 		array[i] = rand() % 70 + 20;
 	}
 }
 
-Time gerarTime(string nome) {
+Time Utils::gerarTime(string nome) {
 
-	int golsEfetuados[24];
-	int golsSofridos[24];
+	int golsEfetuados[limite];
+	int golsSofridos[limite];
 
 	arrayGolsAleatorios(golsEfetuados);
 	arrayGolsAleatorios(golsSofridos);
@@ -18,9 +18,9 @@ Time gerarTime(string nome) {
 	return (Time(nome, golsEfetuados, golsSofridos));
 }
 
-Liga gerarLiga(void) {
+Liga Utils::gerarLiga(void) {
 
-	Liga	liga;
+	Liga liga;
 
 	liga.adicionarTime(gerarTime("Flamengo"));
 	liga.adicionarTime(gerarTime("Fluminense"));

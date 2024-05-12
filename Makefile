@@ -1,7 +1,7 @@
 #______________________________________//_______________________________________
 SRC_DIR		=	./source \
 				./test
-SRC			=	utils.cpp \
+SRC			=	Utils.cpp \
 				Time.cpp \
 				Liga.cpp
 SRC_MAIN	=	main.cpp
@@ -13,7 +13,7 @@ OBJ_MAIN	=	$(SRC_MAIN:%.cpp=$(OBJ_DIR)/%.o)
 OBJ_TESTE	=	$(SRC_TESTE:%.cpp=$(OBJ_DIR)/%.o)
 
 INCD_DIR	=	-I ./include
-INCD		=	include.h \
+INCD		=	Utils.h \
 				Time.h \
 				Liga.h
 #______________________________________//_______________________________________
