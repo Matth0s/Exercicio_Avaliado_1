@@ -15,16 +15,22 @@ using namespace std;
 int	main(void) {
 
 	{
-		cout << "----- Construtor Padrão -----" << endl << endl;
+		cout << "____________________ Construtor Padrão ____________________"
+			 << endl
+			 << endl;
 
 		Time	time1;
 		time1.mostrarGols();
 
-		cout << endl;
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
 	}
 
 	{
-		cout << "----- Construtor Array -----" << endl << endl;
+		cout << "____________________ Construtor Array _____________________"
+			 << endl
+			 << endl;
 
 		int array[Utils::limite] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
 
@@ -32,10 +38,15 @@ int	main(void) {
 
 		time1.mostrarGols();
 
-		cout << endl;
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
 	}
 
 	{
+		cout << "____________________________//_____________________________"
+			 << endl;
+
 		srand(2);
 
 		int		efetuados[Utils::limite];
@@ -62,40 +73,70 @@ int	main(void) {
 			cout << (time1.getGolsSofridosCampeonatoAno(
 				BRASILEIRAO, Time::MAXANO - (i % 3)) == sofridos[(i % 3) * 4 + BRASILEIRAO] ? "✅" : "❌");
 		}
+
 		cout << endl;
+		cout << "____________________________//_____________________________"
+			 << endl
+			<< endl;
 	}
 
 	{
+		cout << "____________________________//_____________________________"
+			 << endl;
+
 		srand(3);
 
 		Time	time1 = Utils::gerarTime("Flamengo");
 		Liga	liga1;
 
-		cout << "_______________________________________________________________" << endl;
+		cout << "//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\\\\"
+			 << endl;
 		time1.mostrarGols();
-		cout << "_______________________________________________________________" << endl;
+		cout << "\\\\________________________________________________________//"
+			 << endl;
+
+		cout << "//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\\\\"
+			 << endl;
 		liga1.mostrarTimes();
-		cout << "_______________________________________________________________" << endl;
+		cout << "\\\\________________________________________________________//"
+			 << endl;
+
+		cout << "//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\\\\"
+			 << endl;
 		liga1.adicionarTime(time1);
 		liga1.mostrarTimes();
-		cout << "_______________________________________________________________" << endl;
+		cout << "\\\\________________________________________________________//"
+			 << endl;
+
+		cout << "//¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\\\\"
+			 << endl;
 		liga1.removerTimePorNome("Flamengo");
 		liga1.mostrarTimes();
-		cout << "_______________________________________________________________" << endl;
+		cout << "\\\\________________________________________________________//"
+			 << endl
+			 << endl;
 	}
 
 	{
+		cout << "____________________________//_____________________________"
+			 << endl;
+
 		Liga	liga;
 
 		liga = Utils::gerarLiga();
 
-		cout << endl << endl;
 		liga.mostrarTimes();
-		cout << endl << endl;
+
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
 	}
 
 	{
-		srand(10);
+		cout << "____________________________//_____________________________"
+			 << endl;
+
+		srand(5);
 
 		Time	time1 = Utils::gerarTime("Flamengo");
 
@@ -123,7 +164,167 @@ int	main(void) {
 		cout << "Desempenho  Sofridos   Anual    = "
 			 << time1.getDesempenhoGolsSofridos() << endl;
 
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
+
+	}
+
+	{
+		cout << "____________________________//_____________________________"
+			 << endl;
+
+		srand(8);
+
+		Liga	liga;
+
+		liga.adicionarTime(Utils::gerarTime("Flamengo"));
+		liga.adicionarTime(Utils::gerarTime("Fluminense"));
+		liga.adicionarTime(Utils::gerarTime("Botafogo"));
+		liga.mostrarTimes();
+		liga.desempenhoCampeonato(CARIOCA);
+		liga.desempenhoCampeonato(COPADOBRASIL);
+		liga.desempenhoCampeonato(BRASILEIRAO);
+		liga.desempenhoAnual();
+
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
+	}
+
+	{
+		cout << "____________________________//_____________________________"
+			 << endl;
+		Liga	liga;
+
+		liga.desempenhoCampeonato(CARIOCA);
+		liga.desempenhoAnual();
+
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
+	}
+
+	{
+		cout << "____________________________//_____________________________"
+			 << endl;
+
+		srand(22);
+		Liga	liga;
+
+		liga.adicionarTime(Utils::gerarTime("Flamengo"));
+		liga.adicionarTime(Utils::gerarTime("Fluminense"));
+		liga.adicionarTime(Utils::gerarTime("Botafogo"));
+
+		liga.desempenhoCampeonato(CARIOCA);
+		liga.melhorEvolucaoCampeonato(CARIOCA);
 		cout << endl;
+		liga.desempenhoCampeonato(COPADOBRASIL);
+		liga.melhorEvolucaoCampeonato(COPADOBRASIL);
+		cout << endl;
+		liga.desempenhoCampeonato(BRASILEIRAO);
+		liga.melhorEvolucaoCampeonato(BRASILEIRAO);
+		cout << endl;
+		liga.desempenhoAnual();
+		liga.melhorEvolucaoAnual();
+
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
+	}
+
+	{
+		cout << "____________________________//_____________________________"
+			 << endl;
+
+		srand(15);
+		Liga	liga;
+
+		liga.adicionarTime(Utils::gerarTime("Flamengo"));
+		liga.adicionarTime(Utils::gerarTime("Fluminense"));
+		liga.adicionarTime(Utils::gerarTime("Botafogo"));
+
+		liga.mostrarTimes();
+		cout << endl;
+		liga.maiorSaldoGolsCampeonato(CARIOCA);
+		liga.maiorSaldoGolsCampeonato(COPADOBRASIL);
+		liga.maiorSaldoGolsCampeonato(BRASILEIRAO);
+
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
+	}
+
+	{
+		cout << "____________________________//_____________________________"
+			 << endl;
+
+		srand(30);
+
+		Liga	liga;
+
+		liga.adicionarTime(Utils::gerarTime("Flamengo"));
+		liga.adicionarTime(Utils::gerarTime("Fluminense"));
+		liga.adicionarTime(Utils::gerarTime("Botafogo"));
+
+		liga.mostrarTimes();
+		cout << endl;
+		liga.maiorSaldoGolsAnual();
+
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
+	}
+
+	{
+		srand(0);
+
+		Liga	liga;
+
+		liga.adicionarTime(Utils::gerarTime("Flamengo"));
+		liga.adicionarTime(Utils::gerarTime("Fluminense"));
+		liga.adicionarTime(Utils::gerarTime("Botafogo"));
+
+		liga.mostrarTimes();
+		cout << endl;
+		cout << endl;
+		cout << endl;
+		liga.desempenhoCampeonato(CARIOCA);
+		cout << endl;
+		liga.desempenhoAnual();
+		cout << endl;
+		liga.maiorSaldoGolsCampeonato(CARIOCA);
+		cout << endl;
+		liga.maiorSaldoGolsAnual();
+		cout << endl;
+		liga.melhorEvolucaoCampeonato(CARIOCA);
+		cout << endl;
+		liga.melhorEvolucaoAnual();
+		cout << endl;
+
+	}
+
+	{
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
+
+		Liga	liga;
+
+		liga.desempenhoCampeonato(CARIOCA);
+		liga.desempenhoAnual();
+
+		liga.maiorSaldoGolsCampeonato(CARIOCA);
+		liga.maiorSaldoGolsAnual();
+
+		liga.melhorEvolucaoCampeonato(CARIOCA);
+		liga.melhorEvolucaoAnual();
+
+		liga.mostrarTimes();
+
+		cout << "____________________________//_____________________________"
+			 << endl
+			 << endl;
 	}
 
 	return (0);

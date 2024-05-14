@@ -1,5 +1,5 @@
 ## Objetos ##
-build
+build/
 *.o
 *.obj
 
@@ -10,4 +10,4 @@ main
 teste
 
 ## Configurações ##
-.vscode
+.vscode/

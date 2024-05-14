@@ -30,7 +30,7 @@ class Time {
 		/* Numero de anos no intervalo de tempo do historico. */
 		static const int	_anos = (MAXANO - MINANO) + 1;
 
-		/* Valor do intervalo de anos utilizado no calculo da Média Movel */
+		/* Valor do intervalo de anos utilizado no calculo da Média Movel. */
 		static const int	_mediaN = 3;
 
 		string	_nome;
@@ -58,7 +58,7 @@ class Time {
 		double _mediaMovelAnual(int gols[][_anos], int ano);
 
 	public:
-		/* Construtor padrão, utilizado para a instanciação rápida de times.
+		/* Construtor Padrão, utilizado para a instanciação rápida de times.
 		Zera o histórico de gols e atribui o nome "Desconhecido" ao Time. */
 		Time(void);
 
@@ -71,7 +71,8 @@ class Time {
 		string	getNome(void);
 		int		getGolsEfetuadosCampeonatoAno(Campeonato campeonato, int ano);
 		int		getGolsSofridosCampeonatoAno(Campeonato campeonato, int ano);
-		int		getSaldoGolsCampeonatoAno(Campeonato campeonato, int ano);
+		int		getSaldoGolsCampeonato(Campeonato campeonato);
+		int		getSaldoGols(void);
 
 		/* Calcula o desempenho do Time no campeonato considerando os gols
 		efetuados, quanto mais gols efetuados, melhor. Retorna o valor calculado

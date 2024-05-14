@@ -36,7 +36,7 @@ int Time::_golsCampeonatoAno(int gols[][_anos], Campeonato campeonato, int ano) 
 }
 
 double Time::_mediaMovelCampeonato(int gols[][_anos], Campeonato campeonato,
-									int ano) {
+																	int ano) {
 
 	double total;
 
@@ -51,9 +51,8 @@ double Time::_mediaMovelCampeonato(int gols[][_anos], Campeonato campeonato,
 
 double Time::_mediaMovelAnual(int gols[][_anos], int ano) {
 
-	double total;
+	double total = 0;
 
-	total = 0;
 	for (unsigned i = 0; i < _mediaN; i++) {
 		total += gols[CARIOCA][ano + i];
 		total += gols[COPADOBRASIL][ano + i];
@@ -76,9 +75,28 @@ int Time::getGolsSofridosCampeonatoAno(Campeonato campeonato, int ano) {
 	return (_golsCampeonatoAno(_golsSofridos, campeonato, ano));
 }
 
-int Time::getSaldoGolsCampeonatoAno(Campeonato campeonato, int ano) {
-	return (_golsCampeonatoAno(_golsEfetuados, campeonato, ano)
-				- _golsCampeonatoAno(_golsSofridos, campeonato, ano));
+int Time::getSaldoGolsCampeonato(Campeonato campeonato) {
+
+	int	total = 0;
+
+	for (unsigned i = 0; i < _anos; i++) {
+		total += (_golsEfetuados[campeonato][i] - _golsSofridos[campeonato][i]);
+	}
+
+	return (total);
+}
+
+int Time::getSaldoGols(void) {
+
+	int	total = 0;
+
+	for (unsigned i = 0; i < _anos; i++) {
+		total += (_golsEfetuados[CARIOCA][i] - _golsSofridos[CARIOCA][i]);
+		total += (_golsEfetuados[COPADOBRASIL][i] - _golsSofridos[COPADOBRASIL][i]);
+		total += (_golsEfetuados[BRASILEIRAO][i] - _golsSofridos[BRASILEIRAO][i]);
+	}
+
+	return (total);
 }
 
 double Time::getDesempenhoGolsEfetuadosCampeonato(Campeonato campeonato) {
@@ -88,6 +106,7 @@ double Time::getDesempenhoGolsEfetuadosCampeonato(Campeonato campeonato) {
 	// M_a / M_{a-1}
 	desempenho = _mediaMovelCampeonato(_golsEfetuados, campeonato, 0)
 					/ _mediaMovelCampeonato(_golsEfetuados, campeonato, 1);
+
 	// 1,24562875 - 1   (pegar o decimal)
 	// 0,24562875 * 100 (transformar em porcentagem)
 	// 24,562875 * 100  (preparar para o round())
@@ -105,6 +124,7 @@ double Time::getDesempenhoGolsSofridosCampeonato(Campeonato campeonato) {
 	// M_{a-1) / M_{a} (para avaliar valores maiores que 1 como melhora)
 	desempenho = _mediaMovelCampeonato(_golsSofridos, campeonato, 1)
 					/ _mediaMovelCampeonato(_golsSofridos, campeonato, 0);
+
 	// 1,24562875 - 1   (pegar o decimal)
 	// 0,24562875 * 100 (transformar em porcentagem)
 	// 24,562875 * 100  (preparar para o round())
@@ -122,6 +142,7 @@ double Time::getDesempenhoGolsEfetuados(void) {
 	// M_a / M_{a-1}
 	desempenho = _mediaMovelAnual(_golsEfetuados, 0)
 					/ _mediaMovelAnual(_golsEfetuados, 1);
+
 	// 1,24562875 - 1   (pegar o decimal)
 	// 0,24562875 * 100 (transformar em porcentagem)
 	// 24,562875 * 100  (preparar para o round())
@@ -139,6 +160,7 @@ double Time::getDesempenhoGolsSofridos(void) {
 	// M_{a-1) / M_{a} (para avaliar valores maiores que 1 como melhora)
 	desempenho = _mediaMovelAnual(_golsSofridos, 1)
 					/ _mediaMovelAnual(_golsSofridos, 0);
+
 	// 1,24562875 - 1   (pegar o decimal)
 	// 0,24562875 * 100 (transformar em porcentagem)
 	// 24,562875 * 100  (preparar para o round())

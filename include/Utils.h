@@ -10,7 +10,7 @@ class Utils {
 
 	public:
 		/* Numero de elementos dos arrays utilizados, esse numero é igual aos
-		campeonatos disputados vezes os anos do historico */
+		campeonatos disputados vezes os anos do historico. */
 		static const int	limite = 12;
 
 		/* Atribui aos elementos do array parametro um int do intervalo [20, 90). */
