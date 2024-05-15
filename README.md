@@ -4,7 +4,7 @@
 
 O programa apresenta dados referentes ao desempenho de times do futebol brasileiro na disputa de três campeonatos ao longo de quatro anos. Os valores da série histórica de jogos foram obtidos de forma arbitrária.
 
-## Requisitos Para Compilação
+## Requisitos Para Compilação:
 
 Necessario compilador gcc, ferramenta make
 
