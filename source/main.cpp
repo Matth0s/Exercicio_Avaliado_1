@@ -83,6 +83,16 @@ int main(void) {
 	srand(time(0));
 	liga = Utils::gerarLiga();
 
+	cout << endl;
+	cout << " * ¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨ *\n";
+	cout << " |       Bem Vindo Programa Principal       |\n";
+	cout << " |                                          |\n";
+	cout << " |        utilize os codigos do Menu        |\n";
+	cout << " |       para interacao com o sistema       |\n";
+	cout << " * ________________________________________ *"
+		 << endl
+		 << endl;
+
 	while (true) {
 
 		exibirMenuPrincipal();

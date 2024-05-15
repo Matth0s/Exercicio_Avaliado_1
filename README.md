@@ -1,4 +1,7 @@
-# Trabalho
+# Primeiro Exercício Avaliado
+## Autor:
+  - Nome: Matheus Moreira do Nascimento
+  - DRE: 119042060
 
 ## Introdução:
 
