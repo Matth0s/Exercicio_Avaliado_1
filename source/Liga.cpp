@@ -20,10 +20,14 @@ void Liga::removerTimePorNome(string nome) {
 
 void Liga::mostrarTimes(void) {
 
+	_exibirCabecalho("TIMES");
+
+	cout << endl;
 	for (unsigned i = 0; i < _times.size(); i++) {
 		_times.at(i).mostrarGols();
-		cout << endl;
 	}
+
+	_exibirRodape();
 }
 
 void Liga::_bubbleSort(vector<vector<double>> &dados) {
@@ -45,9 +49,9 @@ void Liga::_bubbleSort(vector<vector<double>> &dados) {
 
 void Liga::_exibirCabecalho(string texto) {
 
-	cout << "/¨¨¨¨¨¨¨   "
+	cout << "\n/¨¨¨¨¨¨¨   "
 		 << left << setw(20) << texto
-		 << right << "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\\"
+		 << right << "¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨¨\\"
 		 << endl;
 }
 
@@ -60,7 +64,7 @@ void Liga::_exibirCorpo(int index, int flag, double valor) {
 
 	// Formata o nome do Time
 	cout << "     "
-		 << left << setw(12) << _times.at(index).getNome()
+		 << left << setw(15) << _times.at(index).getNome()
 		 << right << " | ";
 
 	// Escolhe o texto auxiliar do informe
@@ -83,7 +87,7 @@ void Liga::_exibirCorpo(int index, int flag, double valor) {
 
 void Liga::_exibirRodape(void) {
 
-	cout << "\n\\__________________________________________________________/"
+	cout << "\n\\_____________________________________________________________/\n"
 		 << endl;
 }
 

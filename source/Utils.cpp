@@ -30,7 +30,7 @@ Liga Utils::gerarLiga(void) {
 	liga.adicionarTime(gerarTime("Bangu"));
 	liga.adicionarTime(gerarTime("Boavista"));
 	liga.adicionarTime(gerarTime("Volta Redonda"));
-	liga.adicionarTime(gerarTime("Nova Iguaçu"));
+	liga.adicionarTime(gerarTime("Nova Iguacu"));
 	liga.adicionarTime(gerarTime("Audax Rio"));
 
 	return (liga);

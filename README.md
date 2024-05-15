@@ -16,7 +16,7 @@ sudo apt-get update
 ```sh
 sudo apt-get -y install build-essential
 ```
-## Como Compilar:
+## Como Compilar e Executar:
 
 **Comando para compilação:**
 ```sh
@@ -29,8 +29,4 @@ make
 ```
 ## Como Utilizar:
 
-Descrição
-
-<p align="center">
-  <img src="https://play-lh.googleusercontent.com/ewAKis2o9Gg-QLTegNcKcsAX4fjRci3KUd9RF1TikuizuZSopxloPmfp29SMI03Cfwk" alt="imagem-ilustrando-programa" />
-</p>
+Ao iniciar o programa, um menu será exibido, apresentando as opções de interação disponíveis, cada uma identificada por um código correspondente. Após a execução de cada comando, é necessário pressionar a tecla `Enter` para prosseguir com a interação.
